@@ -9,7 +9,9 @@ Mancraft, a minecraft mod using the forge API.
 
 ## Configuration files
 
- - `config/Mining.cfg` Customize block hardnesses
+1. `config/Mining.cfg`
+    - Customize block hardnesses
+    - Customize TNT recipe yield
 
 ## Hardcore Mining
 
@@ -69,3 +71,5 @@ It's time for Steve to work those lats. Do you even dig?
         <td>30</td>
     </tr>
 </table>
+
+FIRE IN THE HOLE!!! We've amped up the yield from crafting TNT (default 5), no harm could come from this... right?
