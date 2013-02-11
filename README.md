@@ -1,6 +1,15 @@
 # minecraft-forge-mancraft
 
-Mancraft, a minecraft mod using the forge API
+Mancraft, a minecraft mod using the forge API.
+
+## Installation
+
+ - [Install Minecraft Forge](http://www.minecraftforge.net/wiki/Installation/Universal)
+ - Place mancraft.zip in your `mods` folder
+
+## Configuration files
+
+ - `config/Mining.cfg` Customize block hardnesses
 
 ## Hardcore Mining
 
@@ -13,31 +22,31 @@ It's time for Steve to work those lats. Do you even dig?
     </tr>
     <tr>
         <td>Clay</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Cobblestone</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Cobblestone Mossy</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Dirt</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Grass</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Netherrack</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Tilled Field</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Sandstone</td>
@@ -49,14 +58,14 @@ It's time for Steve to work those lats. Do you even dig?
     </tr>
     <tr>
         <td>Brick</td>
-        <td>50</td>
+        <td>30</td>
     </tr>
     <tr>
         <td>Nether Brick</td>
-        <td>50</td>
+        <td>30</td>
     </tr>
     <tr>
         <td>Stone Brick</td>
-        <td>50</td>
+        <td>30</td>
     </tr>
 </table>
