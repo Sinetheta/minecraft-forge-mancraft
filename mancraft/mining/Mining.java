@@ -30,7 +30,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
-@Mod(modid = "Mining", name = "Mining", version = "0.2.0")
+@Mod(modid = "Mining", name = "Mining", version = "0.1.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Mining {
 
@@ -49,33 +49,33 @@ public class Mining {
     public static float hardnesNethersBrick;
 
     private static void RemoveRecipe(ItemStack resultItem) {
-      ItemStack recipeResult = null;
-      ArrayList recipes = (ArrayList) CraftingManager.getInstance().getRecipeList();
-      for (int scan = 0; scan < recipes.size(); scan++)
-      {
-               IRecipe tmpRecipe = (IRecipe) recipes.get(scan);
-               if (tmpRecipe instanceof ShapedRecipes)
-               {
-                       ShapedRecipes recipe = (ShapedRecipes)tmpRecipe;
-                       recipeResult = recipe.getRecipeOutput();
-               }
-               if (tmpRecipe instanceof ShapelessRecipes)
-               {
-                       ShapelessRecipes recipe = (ShapelessRecipes)tmpRecipe;
-                       recipeResult = recipe.getRecipeOutput();
-               }
-               if (ItemStack.areItemStacksEqual(resultItem, recipeResult))
-               {
-                       System.out.println("Mancraft Mining Removed Recipe: " + recipes.get(scan) + " -> " + recipeResult);
-                       recipes.remove(scan);
-               }
+        ItemStack recipeResult = null;
+        ArrayList recipes = (ArrayList) CraftingManager.getInstance().getRecipeList();
+        for (int scan = 0; scan < recipes.size(); scan++)
+        {
+                 IRecipe tmpRecipe = (IRecipe) recipes.get(scan);
+                 if (tmpRecipe instanceof ShapedRecipes)
+                 {
+                         ShapedRecipes recipe = (ShapedRecipes)tmpRecipe;
+                         recipeResult = recipe.getRecipeOutput();
+                 }
+                 if (tmpRecipe instanceof ShapelessRecipes)
+                 {
+                         ShapelessRecipes recipe = (ShapelessRecipes)tmpRecipe;
+                         recipeResult = recipe.getRecipeOutput();
+                 }
+                 if (ItemStack.areItemStacksEqual(resultItem, recipeResult))
+                 {
+                         System.out.println("Mancraft Mining Removed Recipe: " + recipes.get(scan) + " -> " + recipeResult);
+                         recipes.remove(scan);
+                 }
+        }
       }
-    }
 
     @Instance("Mining")
     public static Mining instance;
 
-    @SidedProxy(clientSide = "mancraft.mining.client.ClientProxy", serverSide = "tutorial.generic.CommonProxy")
+    @SidedProxy(clientSide = "mancraft.mining.client.ClientProxy", serverSide = "mancraft.mining.CommonProxy")
     public static CommonProxy proxy;
 
     @PreInit
@@ -100,8 +100,6 @@ public class Mining {
         hardnesNethersBrick = config.get("Hardness", "Nether Brick Hardness", 30).getInt();
 
         config.save();
-
-        this.RemoveRecipe(new ItemStack(Block.tnt, 1));
     }
 
     @Init
@@ -118,10 +116,9 @@ public class Mining {
         Block.sandStone.setHardness(hardnessSandStone);
         Block.brick.setHardness(hardnessBrick);
         Block.stoneBrick.setHardness(hardnessStoneBrick);
-        Block.netherBrick.setHardness(hardnesNethersBrick);  
-
-        proxy.registerRenderers();
-
+        Block.netherBrick.setHardness(hardnesNethersBrick); 
+        
+        this.RemoveRecipe(new ItemStack(Block.tnt, 1));
         GameRegistry.addRecipe(new ItemStack(Block.tnt, tntBuildNum), "xyx", "yxy", "xyx", 'x', Item.gunpowder, 'y', Block.sand);
     }
 

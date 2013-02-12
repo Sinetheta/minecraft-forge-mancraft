@@ -1,6 +1,6 @@
 # minecraft-forge-mancraft
 
-Mancraft, a minecraft mod using the forge API.
+Mancraft, a minecraft mod using the forge API. For more information, please visit [Mancraft.ca](http://mancraft.ca/).
 
 ## Installation
 
